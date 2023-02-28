@@ -1,0 +1,52 @@
+~Task 1~
+
+    Functia functioneaza ca un for, scazand cate o unitate fiecare litera,
+pana se scade valoarea data. In cazul in care litera e Z, se inlocuieste cu A,
+iar in mod normal se incrementeaza. totul se schimba in stringul dat.
+Pt eficienta, data stepul este 26(o rotatie completa de alfabet) sau 0,
+stringul nu se mai schimba, ci doar se copiaza in
+adresa ceruta.
+
+~Task 2~
+    2.1
+Functia compara xA cu xB. daca acestea sunt egale, compara Ya cu Yb, si
+depinzand care e mai mare, se scad. Fiind paralele cu ox sau oy,
+diferenta celorlalte coordonate va fi 0, iar distanta va fi doar diferenta.
+    2.2
+Functia are acelasi rationament ca 2.1, doar ca size ul structurii este modificat.
+Prima comparatie este intre ultimul element si penultimul, deci point_size
+este inmultit cu indicele, respectiv indicele -1. Indicele scade pana este comparata
+prima pereche.
+    2.3
+Ia nr de la 0, le face patratul, si le compara cu elementul din vector.
+Pt parcurgerea prin vectorul de inturi se inmulteste cu 4 indicele, intrucat un
+element are 4 octeti. daca patratul creat e mai mic decat nr, se mareste si se
+face patratul elem urmator. Daca sunt egale, se pune 0, iar daca e mai mare,
+se pune 0, el nu e p.p.
+
+~Task3~
+    Formula pt beaufort este diferenta literelor +65(codul ascii pt A).
+Daca diferenta e negativa, se adauga 26. Pentru a suprapune key ul peste tot
+cuvantul, se patreaza len ul sau intr o variabila, iar cand variabila contor
+depaseste lenul, contorul se reseteaza la 0.
+
+~Task 4~
+    Pt a parcurge matricea in spirala( de inturi), sunt 4 foruri intr un while.
+Se salveaza in variabile top, bottom, left si right, top si left sunt 0, iar bottom
+si right cu N-1. *topul si right ul sunt initializate cu 0 la inceput, deoarece cand
+dadeam check, topul lua valoarea N-1 fara sa ii dau eu ceva* Cat timp se poate merge
+spre dreapta, se calculeaza indicele (a[top][i], unde i = left, right; = n -nr de coloane * top +i)
+se ia valoarea (tine cont de 4 octeti pt nr), se adauga literei, iar ulterior prin al se muta in
+adresa dorita. Indicii pt string se stocheaza cu ajutorul stivei( la inceput se da push 0 pt primul
+caracter, iar apoi la fiecare adaugare in string pop pt adaugare, apoi incrementare si push pt urm elem;
+se face la finalul programului pop pt a fi nr de push = nr de pop). Dupa ce se executa "forul", se mareste
+topul, intrucat am afisat de pe prima linie, nu se mai ia in considerare, si se verifica conditiile intrarii
+in urmatorul for ( de sus in jos). Asemanator, pt forul 2 se ia indicele i * nr de coloane + right, cu i de la
+top la bottom si se decrementeaza right ul. Verificat conditii pt for 3, mers de la dreapta la stanga, 
+indicele bottom * nr coloane +i cu i de la right la left, se scade bottom ul si for 4, pt mers de jos in sus,
+cu indicele i * nr de coloane + left, cu i de la bottom la top, se mareste left ul. La final, se compara ultimul
+indice din stiva cu N*N (nr de caractere necesare in string), si se reiau cele de mai sus. Din acest motiv trebuie
+verificat dupa fiecare din primele 3 label uri daca sunt eligibile pt urmatorul ( intr o matrice de 3 pe 3 se face
+parcurgerea de la stanga la dreapta de 2 ori, iar celelalte o data).  
+
+
